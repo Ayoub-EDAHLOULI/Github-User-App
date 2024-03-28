@@ -1,0 +1,315 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#app{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.search{
+  width: 500px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: #0D1117;
+  display: flex;
+  justify-content: space-around;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.57);
+}
+
+.search input{
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+.search i{
+  cursor: pointer;
+}
+
+.search input::placeholder{
+  letter-spacing: 2px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.container{
+  display: flex;
+  flex-direction: row-reverse;
+  background-color: #0D1117;
+  padding: 40px;
+  margin: 50px;
+  border-radius: 30px;
+  width: 90vw;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.57);
+}
+
+.container .notFound{
+  transform: translateX(-125%);
+}
+
+.left-side{
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 10px;
+  row-gap: 5px;
+}
+
+.left-side img{
+  width: 200px;
+  border: 1.8px solid grey;
+  border-radius: 50%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.87);
+}
+
+.left-side .body .desc{
+  padding: 10px 10px 10px 0;
+}
+
+.left-side .body .follow{
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  column-gap: 8px;
+}
+
+.followers,
+.following{
+  display: flex;
+  column-gap: 5px;
+}
+
+.follow i{
+  font-size: 12px;
+  color: #e0b397;
+}
+
+.followers h4,
+.following h4{
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.right-side{
+  display: flex;
+  width: 70%;
+  flex-direction: column;
+  justify-content: flex-start;
+  row-gap: 10px;
+}
+
+.right-side .head{
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.right-side .cards{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 60px;
+}
+
+.right-side .cards .card{
+  border: 1px solid grey;
+  padding: 15px 30px;
+  border-radius: 10px;
+}
+
+.card .projectInfo{
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+}
+
+.card .projectInfo i{
+  font-size: 13px;
+}
+
+.card .projectInfo a{
+  font-size: 14px;
+  color: #2986ff;
+  text-decoration: none;
+}
+
+.card .projectInfo a:hover{
+  color: #529dff;
+}
+
+.card .projectInfo .private h4{
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  border: 0.2px solid rgba(255, 255, 255, 0.4);
+  padding: 1px 8px;
+  border-radius: 10px;
+}
+
+.tools{
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+}
+
+.tools .shape{
+  width: 12px;
+  height: 12px;
+  background-color: #E34C26;
+  border-radius: 50%;
+}
+
+.tools h4{
+  font-size: 13px;
+  font-weight: 400;
+}
+
+
+
+/*Responsive Design*/
+
+/* For Tablet View */
+@media screen and (min-width: 768px) 
+    and (max-width: 1024px) {
+
+      .search{
+        margin-top: 150px;
+      }
+
+      .container{
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 20px;
+      }
+
+      .left-side{
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin: 10px;
+        row-gap: 5px;
+      }
+
+      .right-side{
+        width: 100%;
+        margin-top: 20px;
+        row-gap: 0px;
+      }
+
+      .right-side .head{
+        margin-top: 10px;
+      }
+
+      .right-side .cards{
+        display: block;
+        gap: 25px;
+        margin-top: 30px;
+      }
+
+      .right-side .cards .card{
+        margin-top: 20px;
+      }
+}
+
+
+@media screen and (min-width: 482px) 
+    and (max-width: 967px) {
+
+      .search{
+        margin-top: 200px;
+      }
+
+}
+
+
+
+/* For Mobile Portrait View */
+@media screen and (max-width: 480px) 
+    and (orientation: portrait) {
+
+      #app{
+        height: 900px;
+      }
+
+      .search{
+        margin-top: 600px;
+        width: 355px;
+      }
+
+      .container{
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 10px 5px;
+        padding-bottom: 80px;
+        width: 95vw;
+      }
+
+      .left-side{
+        width: 90%;
+        display: block;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin: 10px;
+        row-gap: 5px;
+      }
+
+      .right-side{
+        width: 100%;
+        margin-top: 20px;
+        row-gap: 0px;
+        display: block;
+      }
+
+      .right-side .head{
+        margin-top: 30px;
+      }
+
+      .right-side .cards{
+        display: block;
+        margin-top: 30px;
+      }
+
+      .right-side .card{
+        margin-top: 20px;
+      }
+}
+
+
+/* For iPhone 6 and 6 plus Portrait or Landscape View */
+@media (max-width: 320px) {
+      .search{
+        width: 290px;
+      }
+
+      .container{
+        display: flex;
+        flex-direction: column-reverse;
+      }
+};
